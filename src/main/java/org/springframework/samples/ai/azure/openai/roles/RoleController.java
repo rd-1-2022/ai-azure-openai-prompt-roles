@@ -1,4 +1,4 @@
-package org.springframework.samples.ai.openai.roles;
+package org.springframework.samples.ai.azure.openai.roles;
 
 import jdk.jfr.Frequency;
 import org.springframework.ai.client.AiClient;

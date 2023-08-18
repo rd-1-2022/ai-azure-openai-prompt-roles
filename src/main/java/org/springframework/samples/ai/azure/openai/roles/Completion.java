@@ -1,4 +1,4 @@
-package org.springframework.samples.ai.openai.roles;
+package org.springframework.samples.ai.azure.openai.roles;
 
 public class Completion {
 
