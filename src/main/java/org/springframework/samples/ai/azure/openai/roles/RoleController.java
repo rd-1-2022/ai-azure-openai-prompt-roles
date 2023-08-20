@@ -32,10 +32,10 @@ public class RoleController {
 
     @GetMapping("/ai/roles")
     public List<Generation> generate(
-            @RequestParam(value = "request", defaultValue = "Tell me about 3 famous pirates from the Golden Age of Piracy and why they did.") String request,
+            @RequestParam(value = "message", defaultValue = "Tell me about 3 famous pirates from the Golden Age of Piracy and why they did.") String message,
             @RequestParam(value = "name", defaultValue = "Bob") String name,
             @RequestParam(value = "voice", defaultValue = "pirate") String voice) {
-        UserMessage userMessage = new UserMessage(request);
+        UserMessage userMessage = new UserMessage(message);
         SystemPromptTemplate systemPromptTemplate = new SystemPromptTemplate(systemResource);
         Message systemMessage = systemPromptTemplate.createMessage(Map.of("name", name, "voice", voice));
         Prompt prompt = new Prompt(List.of(userMessage, systemMessage));

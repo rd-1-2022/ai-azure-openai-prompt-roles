@@ -5,7 +5,7 @@ This project contains a web service that will accept HTTP GET requests at
 
 There is a request parameter that is used in the User Message
 
-* `request` The user request or question
+* `message` The user request message.
 
 The default value is `Tell me about 3 famous pirates from the Golden Age of Piracy and why they did.`
 
@@ -13,6 +13,24 @@ There are two optional request parameters that are used in the System Message
 
 * `name` The name the AI assistant will use to identify itself.  The default value is `Bob`
 * `voice` The style of voice to use when responding.  The default value is `pirate`
+
+## Roles
+
+The user message is the content of the request parameter 'message'. 
+
+The system message is what sets the context for the AI Model to respond.
+The template for the system message is
+
+```text
+You are a helpful AI assistant.
+You are an AI assistant that helps people find information.
+Your name is {name}
+You should reply to the user's request with your name and also in the style of a {voice}.
+```
+The request parameters `name` and `voice` in the controller are used to fill in the placeholders in the system template.
+
+The 
+
 
 ## Building and running
 
